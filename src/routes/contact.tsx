@@ -1,12 +1,14 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { useState, type FormEvent } from 'react';
-import { Phone, Mail, MessageSquare, Send, Copy, Check, Sparkles, Code2, Globe, ShieldCheck, ArrowRight, User } from 'lucide-react';
+import { Phone, Mail, MessageSquare, Send, Copy, Check, Sparkles, Code2, Globe, ShieldCheck, ArrowRight, User, Users, Film, Palette, Laptop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageLayout, AppBand, pageHead } from '@/components/streaming';
 import { toast } from 'sonner';
+import teamPhoto from '@/assets/team.jpg';
+import manojPhoto from '@/assets/manoj-thota.jpg';
 
 export const Route = createFileRoute('/contact')({
-  head: () => pageHead('Contact Manoj Thota', 'Get in touch with Manoj Thota — Designer and Full-Stack Developer of SonicReels.'),
+  head: () => pageHead('Contact & Team | SonicReels', 'Get in touch with Manoj Thota and the team behind SonicReels.'),
   component: Contact,
 });
 
@@ -45,7 +47,7 @@ function Contact() {
           <div className="contact-avatar-container">
             <div className="contact-avatar-ring">
               <img
-                src="/manoj-thota.jpg"
+                src={manojPhoto}
                 alt="Manoj Thota - Designer & Developer"
                 className="contact-avatar-img"
                 width={160}
@@ -81,6 +83,67 @@ function Contact() {
                   Email Manoj
                 </a>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Team Section */}
+        <section className="contact-team-section">
+          <div className="contact-team-header">
+            <div className="eyebrow">
+              <Users className="size-3.5 text-primary" />
+              <span>OUR TEAM</span>
+            </div>
+            <h2>The Team Behind SonicReels</h2>
+            <p className="contact-team-subtitle">
+              Passionate creators, developers, and visionaries building cinematic, high-impact vertical drama experiences for audiences worldwide.
+            </p>
+          </div>
+
+          <div className="team-photo-showcase">
+            <div className="team-photo-frame">
+              <img
+                src={teamPhoto}
+                alt="SonicReels Team"
+                className="team-photo-img"
+                loading="eager"
+              />
+              <div className="team-photo-gradient" />
+              <div className="team-photo-overlay-content">
+                <div className="team-photo-tag">
+                  <span className="team-photo-pulse-dot" />
+                  <span>SonicReels Team</span>
+                </div>
+                <p className="team-photo-quote">
+                  "Building immersive short-format entertainment, one frame at a time."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-pillars-grid">
+            <div className="team-pillar-card">
+              <div className="team-pillar-icon engineering">
+                <Laptop className="size-5" />
+              </div>
+              <h4>Engineering & Architecture</h4>
+              <p>Scalable cloud infrastructure, ultra-fast video delivery, and reactive modern web experiences.</p>
+            </div>
+
+            <div className="team-pillar-card">
+              <div className="team-pillar-icon design">
+                <Palette className="size-5" />
+              </div>
+              <h4>Product Design & UX</h4>
+              <p>Cinematic aesthetics, dark-mode immersion, and seamless navigation tailored for drama fans.</p>
+            </div>
+
+            <div className="team-pillar-card">
+              <div className="team-pillar-icon creative">
+                <Film className="size-5" />
+              </div>
+              <h4>Creative Direction</h4>
+              <p>Curating binge-worthy vertical mini-series, rich emotional narratives, and fresh episodic content.</p>
             </div>
           </div>
         </section>
